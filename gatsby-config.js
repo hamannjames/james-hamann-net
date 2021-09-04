@@ -1,13 +1,19 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "James Hamann Personal",
   },
   plugins: [
+    "gatsby-plugin-emotion",
+    "gatsby-plugin-mailgo",
     {
       resolve: "gatsby-source-sanity",
       options: {
-        projectId: "ktvzll2e",
+        projectId: "9yuvjblo",
         dataset: "production",
       },
     },
@@ -17,7 +23,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: "",
+        trackingId: "G-KC1C1F9DDL",
       },
     },
     "gatsby-plugin-react-helmet",
