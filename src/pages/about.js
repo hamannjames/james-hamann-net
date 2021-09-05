@@ -6,7 +6,7 @@ const experience = ((new Date().getFullYear()) - 2015);
 
 const About = () => {
   return (
-    <Page title="A little about me">
+    <Page title="A little about me" description="Want to learn more about me? That's cool! Here's an intro.">
       <div css={css`
           ${tw`max-w-5xl mx-auto`};
           p + p {

@@ -4,6 +4,7 @@ import "tailwindcss/dist/base.min.css"
 import tw, { GlobalStyles, styled, css } from 'twin.macro'
 import { keyframes } from '@emotion/react'
 import Footer from './Footer';
+import SEO from './SEO';
 
 const slide = keyframes`
   0% {
@@ -26,6 +27,7 @@ const Content = tw.div`flex flex-col text-white md:w-4/5`;
 const Layout = ({ children }) => {
   return (
     <>
+      <SEO title="I like building cool things" />
       <GlobalStyles />
       <Wrapper>
         <Header>

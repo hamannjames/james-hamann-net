@@ -4,8 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "James Hamann Personal",
+    siteUrl: "https://jameshamann.net",
+    title: "James Hamann - Web Developer",
+    titleTemplate: "%s - James Hamann",
+    description: "I am a web developer who loves to create cool things.",
+    image: '/open_graph_image.jpg',
+    twitterUsername: '@JamesHamann19'
   },
   plugins: [
     "gatsby-plugin-emotion",

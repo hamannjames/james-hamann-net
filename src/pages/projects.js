@@ -41,7 +41,7 @@ const Projects = () => {
   const scvsarImages = useScvsarImages().sort((a,b) => a.node.name - b.node.name);
   
   return (
-    <Page title="Projects">
+    <Page title="Projects" description="Here are some examples of the projcts I have worked on. You can message me for more!">
       <ProjectContainer>
         <div>
           <h2>Stock Sentinel (under development)</h2>
