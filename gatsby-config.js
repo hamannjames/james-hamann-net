@@ -15,6 +15,20 @@ module.exports = {
     "gatsby-plugin-emotion",
     "gatsby-plugin-mailgo",
     {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-T85D6SF",
+  
+        // Include GTM in development.
+        //
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+        
+        // Defaults to false
+        enableWebVitalsTracking: true,
+      },
+    },
+    {
       resolve: "gatsby-source-sanity",
       options: {
         projectId: "9yuvjblo",
@@ -24,12 +38,6 @@ module.exports = {
     "gatsby-plugin-styled-components",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "G-KC1C1F9DDL",
-      },
-    },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     {
