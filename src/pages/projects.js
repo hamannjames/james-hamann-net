@@ -6,6 +6,7 @@ import tw, { css, styled } from 'twin.macro';
 import useJacobsenImages from '../hooks/useJacobsenImages';
 import SimpleSlider from '../components/SimpleSlider';
 import useScvsarImages from '../hooks/useScvsarImages';
+import { graphql } from 'gatsby';
 
 const ProjectContainer = styled.div(css`
   ${tw`flex flex-wrap lg:flex-nowrap md:space-x-4 mt-12 justify-center`};
@@ -35,13 +36,14 @@ const ProjectContainer = styled.div(css`
   }
 `);
 
-const Projects = () => {
+const Projects = ({ data }) => {
 
   const jacobsenMarineImages = useJacobsenImages().sort((a,b) => a.node.name - b.node.name);
   const scvsarImages = useScvsarImages().sort((a,b) => a.node.name - b.node.name);
+  const mainImage = data.sanityPage.mainImage.asset;
   
   return (
-    <Page title="Projects" description="Here are some examples of the projcts I have worked on. You can message me for more!">
+    <Page title="Projects" description="Here are some examples of the projcts I have worked on. You can message me for more!" mainImage={mainImage}>
       <ProjectContainer>
         <div>
           <h2>Stock Sentinel (under development)</h2>
@@ -124,5 +126,17 @@ const Projects = () => {
     </Page>
   )
 }
+
+export const query = graphql`
+  query ProjectsPageQuery {
+    sanityPage(title: {eq: "Projects"}) {
+      mainImage {
+        asset {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`
 
 export default Projects;

@@ -1,12 +1,14 @@
 import Page from '../components/Page';
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
+import { graphql } from 'gatsby';
 
 const experience = ((new Date().getFullYear()) - 2015);
 
-const About = () => {
+const About = ({ data }) => {
+  const mainImage = data.sanityPage.mainImage.asset;
   return (
-    <Page title="A little about me" description="Want to learn more about me? That's cool! Here's an intro.">
+    <Page title="A little about me" description="Want to learn more about me? That's cool! Here's an intro." mainImage={mainImage}>
       <div css={css`
           ${tw`max-w-5xl mx-auto`};
           p + p {
@@ -39,5 +41,17 @@ const About = () => {
     </Page>
   )
 }
+
+export const query = graphql`
+  query AboutPageQuery {
+    sanityPage(title: {eq: "About"}) {
+      mainImage {
+        asset {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`
 
 export default About;

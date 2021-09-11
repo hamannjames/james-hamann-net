@@ -33,6 +33,7 @@ module.exports = {
       options: {
         projectId: "9yuvjblo",
         dataset: "production",
+        watchMode: true,
       },
     },
     "gatsby-plugin-styled-components",

@@ -1,6 +1,7 @@
 import Page from '../components/Page';
 import React from 'react';
 import tw, { styled, css } from 'twin.macro';
+import { graphql } from 'gatsby';
 
 const experience = ((new Date().getFullYear()) - 2015);
 const SkillsList = styled.ul(css`
@@ -36,9 +37,10 @@ const SkillsListContainer = styled.div`
 `;
 const SkillsListWrapper = tw.div``;
 
-const Index = () => {
+const Index = ({ data }) => {
+  const mainImage = data.sanityPage.mainImage.asset;
   return (
-    <Page title="Welcome">
+    <Page title="Welcome" mainImage={mainImage}>
       <p tw="text-center mb-8">
         I've been building cool things on the web for {experience} years, and picked up some skills along the way.
       </p>
@@ -150,5 +152,17 @@ const Index = () => {
     </Page>
   )
 }
+
+export const query = graphql`
+  query HomePageQuery {
+    sanityPage(title: {eq: "Home"}) {
+      mainImage {
+        asset {
+          gatsbyImageData
+        }
+      }
+    }
+  }
+`
 
 export default Index
