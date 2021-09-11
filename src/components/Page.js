@@ -19,7 +19,8 @@ const Page = ({ title, description = "", mainImage = null, children }) => {
         <Header>
           <GatsbyImage 
             css={css`
-              ${tw`absolute w-full h-full z-0 opacity-30`};
+              ${tw`w-full h-full z-0 opacity-30`};
+              position: absolute !important;
               mix-blend-mode: exclusion;
               border-radius: 10px;
             `} 
