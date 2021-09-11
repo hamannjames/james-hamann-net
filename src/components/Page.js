@@ -19,10 +19,17 @@ const Page = ({ title, description = "", mainImage = null, children }) => {
         <Header>
           <GatsbyImage 
             css={css`
-              ${tw`w-full h-full z-0 opacity-30`};
+              ${tw`w-full h-full z-0 opacity-50`};
               position: absolute !important;
               mix-blend-mode: exclusion;
               border-radius: 10px;
+              &:before {
+                ${tw`absolute w-full h-full`};
+                //background: radial-gradient(farthest-side, transparent, #000);
+                background: linear-gradient(to right, #000, transparent 10rem), linear-gradient(to bottom, #000, transparent 10rem), linear-gradient(to left, #000, transparent 10rem), linear-gradient(to top, #000, transparent 10rem);
+                z-index: 1;
+                content: '';
+              }
             `} 
             image={headerImage} 
             alt="home" 
