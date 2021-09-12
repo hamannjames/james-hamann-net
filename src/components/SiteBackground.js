@@ -21,6 +21,9 @@ const Background = styled.div`
   background: linear-gradient(45deg, #18354a 0%, #17574F 33%, #18354a 66%, #17574F 100%);
   background-size: 400% 400%;
   animation: ${slide} 18s linear infinite;
+  @-moz-document url-prefix() {
+    animation: none;
+  }
 `
 
 const SiteBackground = () => {
