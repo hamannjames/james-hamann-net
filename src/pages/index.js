@@ -73,7 +73,6 @@ const Index = ({ data }) => {
               <li>Laravel</li>
               <li>Wordpress</li>
               <li>Gatsby</li>
-              <li>NextJS</li>
             </SkillsList>
           </SkillsListContainer>
         </SkillsListWrapper>
@@ -89,6 +88,7 @@ const Index = ({ data }) => {
               <li>React</li>
               <li>Livewire</li>
               <li>Alpine JS</li>
+              <li>Tailwind CSS</li>
               <li>JQuery</li>
             </SkillsList>
           </SkillsListContainer>
@@ -105,7 +105,6 @@ const Index = ({ data }) => {
               <li>NodeJS</li>
               <li>Express</li>
               <li>MySQL</li>
-              <li>PostgreSQL</li>
               <li>MongoDB</li>
             </SkillsList>
           </SkillsListContainer>
@@ -124,7 +123,6 @@ const Index = ({ data }) => {
               <li>Object Oriented Programming</li>
               <li>Functional Programming</li>
               <li>Mobile-First Design</li>
-              <li>Accessible Design</li>
             </SkillsList>
           </SkillsListContainer>
         </SkillsListWrapper>
@@ -137,13 +135,12 @@ const Index = ({ data }) => {
 </svg>
             </SkillsListHeading>
             <SkillsList>
+              <li>SEO</li>
+              <li>Accessibility</li>
               <li>GraphQL</li>
               <li>Jest</li>
               <li>PHPUnit</li>
               <li>Docker</li>
-              <li>Azure</li>
-              <li>AWS</li>
-              <li>SEO</li>
               <li>Analytics</li>
             </SkillsList>
           </SkillsListContainer>
